@@ -2,10 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>AaronchDev</title>
+    <title>Aaron Chacón — Senior Frontend Engineer</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Aaron Chacón — Senior Frontend Engineer specializing in Angular, design systems and scalable frontend architecture. New portfolio coming soon."
+    />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- Open Graph: how the link looks when shared (LinkedIn, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aaronch.dev/" />
+    <meta property="og:title" content="Aaron Chacón — Senior Frontend Engineer" />
+    <meta
+      property="og:description"
+      content="Angular · Design Systems · Frontend Architecture. New portfolio coming soon — connect on LinkedIn or check out my CV."
+    />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'dark' || t === 'light') {
+            document.documentElement.setAttribute('data-theme', t);
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <!-- Preload the web font: start downloading Inter early, in parallel with the CSS -->
+    <link
+      rel="preload"
+      href="/fonts/inter-latin-variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
   </head>
   <body>
     <app-root></app-root>

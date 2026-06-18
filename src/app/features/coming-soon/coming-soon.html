@@ -1,0 +1,57 @@
+<main class="coming-soon">
+  <div class="controls">
+    <button
+      type="button"
+      class="control"
+      (click)="toggleLang()"
+      [attr.aria-label]="'Switch language to ' + t().next"
+    >
+      {{ t().next }}
+    </button>
+    <button type="button" class="control" (click)="theme.toggle()" aria-label="Toggle color theme">
+      <svg
+        class="control__icon"
+        viewBox="0 0 24 24"
+        width="18"
+        height="18"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" />
+      </svg>
+    </button>
+  </div>
+
+  <section class="content">
+    <span class="status-pill">
+      <span class="status-pill__dot" aria-hidden="true"></span>
+      {{ t().status }}
+    </span>
+
+    <h1 class="title">Aaron Chacón</h1>
+    <p class="role">{{ t().role }}</p>
+    <p class="message">{{ t().message }}</p>
+
+    <div class="actions">
+      <a
+        class="btn btn--primary"
+        href="https://www.linkedin.com/in/aaronchacon"
+        target="_blank"
+        rel="noopener"
+      >
+        LinkedIn
+      </a>
+      <a class="btn btn--ghost" [href]="t().cvUrl" target="_blank" rel="noopener">
+        {{ t().cvLabel }}
+      </a>
+    </div>
+
+    <nav class="links" aria-label="More links">
+      <a href="https://github.com/aaronchacon" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:aaronch.dev@gmail.com">Email</a>
+    </nav>
+  </section>
+
+  <footer class="foot">© 2026 Aaron Chacón — aaronch.dev</footer>
+</main>

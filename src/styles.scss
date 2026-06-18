@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+@use './styles/tokens';
+
+// ----------------------------------------------------------------------------
+//  Web font: Inter — self-hosted, VARIABLE, latin subset.
+//  - A single file (48 KB) covers ALL weights 100–900 → fewer requests.
+//  - self-hosted (no Google Fonts CDN) → no third-party origin, no extra handshake, GDPR-ok.
+//  - font-display: swap → text shows immediately with the fallback, swaps to Inter on load.
+// ----------------------------------------------------------------------------
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900; // variable range in a single file
+  font-display: swap;
+  src: url('/fonts/inter-latin-variable.woff2') format('woff2');
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark; // native scrollbars/inputs follow the theme
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+}
