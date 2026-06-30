@@ -1,0 +1,40 @@
+.app-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-3) var(--space-5);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-family: inherit; // inherit from body
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.app-btn:hover {
+  transform: translateY(-1px);
+}
+
+.app-btn--primary {
+  background: var(--color-cta-bg);
+  color: var(--color-cta-text);
+}
+
+.app-btn--ghost {
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.app-btn--ghost:hover {
+  border-color: var(--color-text-muted);
+}
+
+// Respect users who prefer less motion.
+@media (prefers-reduced-motion: reduce) {
+  .app-btn:hover {
+    transform: none;
+  }
+}

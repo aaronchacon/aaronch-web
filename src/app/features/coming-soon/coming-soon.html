@@ -35,14 +35,15 @@
 
     <div class="actions">
       <a
-        class="btn btn--primary"
+        appButton
+        variant="primary"
         href="https://www.linkedin.com/in/aaronchacon"
         target="_blank"
         rel="noopener"
       >
         LinkedIn
       </a>
-      <a class="btn btn--ghost" [href]="t().cvUrl" target="_blank" rel="noopener">
+      <a appButton variant="ghost" [href]="t().cvUrl" target="_blank" rel="noopener">
         {{ t().cvLabel }}
       </a>
     </div>

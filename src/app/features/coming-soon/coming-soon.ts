@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { ThemeService } from '../../core/theme/theme.service';
+import { Button } from '../../shared/ui/button/button';
 
 type Lang = 'en' | 'es';
 
@@ -31,6 +32,7 @@ const CONTENT = {
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './coming-soon.html',
   styleUrl: './coming-soon.scss',
+  imports: [Button],
 })
 export class ComingSoon {
   protected readonly theme = inject(ThemeService);
