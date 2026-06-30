@@ -3,10 +3,10 @@
     <button
       type="button"
       class="control"
-      (click)="toggleLang()"
-      [attr.aria-label]="'Switch language to ' + t().next"
+      (click)="language.toggle()"
+      [attr.aria-label]="language.active() === 'en' ? 'Switch to Spanish' : 'Switch to English'"
     >
-      {{ t().next }}
+      {{ language.active() === 'en' ? 'ES' : 'EN' }}
     </button>
     <button type="button" class="control" (click)="theme.toggle()" aria-label="Toggle color theme">
       <svg
@@ -23,27 +23,28 @@
     </button>
   </div>
 
-  <section class="content">
+  <section class="content" *transloco="let t; read: 'comingSoon'">
     <span class="status-pill">
       <span class="status-pill__dot" aria-hidden="true"></span>
-      {{ t().status }}
+      {{ t('status') }}
     </span>
 
     <h1 class="title">Aaron Chacón</h1>
-    <p class="role">{{ t().role }}</p>
-    <p class="message">{{ t().message }}</p>
+    <p class="role">{{ t('role') }}</p>
+    <p class="message">{{ t('message') }}</p>
 
     <div class="actions">
       <a
-        class="btn btn--primary"
+        appButton
+        variant="primary"
         href="https://www.linkedin.com/in/aaronchacon"
         target="_blank"
         rel="noopener"
       >
         LinkedIn
       </a>
-      <a class="btn btn--ghost" [href]="t().cvUrl" target="_blank" rel="noopener">
-        {{ t().cvLabel }}
+      <a appButton variant="ghost" [href]="t('cvUrl')" target="_blank" rel="noopener">
+        {{ t('cvLabel') }}
       </a>
     </div>
 
